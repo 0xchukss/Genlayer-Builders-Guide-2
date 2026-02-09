@@ -26,14 +26,10 @@ navigate to project folder
   cd yourProjectName
 </pre>
 
-create contracts and frontend folder inside project folder
+create contracts 
 <pre>
   mkdir contracts
 </pre>
-
-<pre>
-  mkdir frontend
-</pre>  
 
 <img width="914" height="436" alt="mkdir contracts and frontend" src="https://github.com/user-attachments/assets/9cd0d83a-f671-498c-9b7f-387a4a1cea2c" />
 
@@ -100,8 +96,6 @@ go back to your terminal and run
 genlayer account use studio-deployer
 </pre>
 
-<img width="468" height="100" alt="create and set acct" src="https://github.com/user-attachments/assets/5137ddf2-f715-4162-8e2f-57cf56ef410f" />
-
 you will be asked to setup an encryption key (password)
 
 #### deploy contract to genlayer studionet
@@ -111,5 +105,61 @@ you will be asked to setup an encryption key (password)
 
 enter password to deploy, copy your contract address (you will make use of it in setting up your .env file)
 
+# step 4 creating the frontend logic
+#### create a vue frontend template
+run, in the project folder
+<pre>
+  npm create vite@latest frontend -- --template vue-ts
+</pre>
 
+move into frontend folder,
+<pre>
+  cd frontend
+</pre>
+
+install vue
+<pre>
+  npm install
+</pre>
+
+install genlayer SDK
+<pre>
+  npm install genlayer-js
+</pre>
+
+#### create environment
+create a .env file inside the frontend folder and input this below
+
+<img width="246" height="403" alt="create  env" src="https://github.com/user-attachments/assets/a7e307da-6097-4063-bda5-66cb28d06ace" />
+
+<pre>
+  VITE_CONTRACT_ADDRESS=0xYOUR_COPIED_ADDRESS
+</pre>
+replace 0xYOUR_COPIED_ADDRESS with the contract address deployed earlier
+
+#### editing App.vue and styles.css 
+navigate to frontend/src/styles.css and delete everything inside the file
+
+<img width="678" height="353" alt="image" src="https://github.com/user-attachments/assets/4278211a-e2d3-4f97-b968-aaeba6372ebd" />
+
+- your main frontend code will be stored inside App.vue
+- if you cannot write that seek help from an ai
+
+<img width="824" height="443" alt="image" src="https://github.com/user-attachments/assets/dd02b2e8-c994-4f50-a6e4-dacc550346bc" />
+
+
+after filling in your frontend, save it
+
+#### run the frontend
+in your terminal, make sure your are inside the frontend directory
+run,
+<pre>
+  npm run dev
+</pre>
+
+<img width="521" height="250" alt="image" src="https://github.com/user-attachments/assets/13377652-c907-4b7b-b893-7c5d05ca2bcc" />
+
+it should provide a localhost address like this [http://localhost:5173/] that you can open on your browser
+
+<img width="958" height="448" alt="image" src="https://github.com/user-attachments/assets/4afb130c-7986-4130-a48f-28e1fed8c431" />
 
